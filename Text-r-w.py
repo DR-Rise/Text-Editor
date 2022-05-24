@@ -4,8 +4,10 @@ from tkinter import filedialog
 root = Tk()
 root.title('Text Editor')
 root.iconbitmap("icon.ico")
-root.geometry("500x700")
+root.geometry("550x700")
 
+my_frame = Frame(root)
+my_scrollbar = Scrollbar(my_frame, orient=VERTICAL)
 
 def open_txt():
     text_file = filedialog.askopenfilename(initialdir="C:/", title="Open Text File",filetypes=(("Text File","*.txt"),("All","*.*"),))
@@ -26,8 +28,10 @@ def save_txt():
 
 
 
-my_text = Text(root, width=40, height=20, font=("Helvetica", 16))
-
+my_text = Text(my_frame, width=40, height=20, font=("Helvetica", 16))
+my_scrollbar.config(command= my_text.yview)
+my_scrollbar.pack(side=RIGHT, fill=Y)
+my_frame.pack()
 my_text.pack(pady=20)
 
 open_btn = Button(root, text="Open Text File", command=open_txt)
