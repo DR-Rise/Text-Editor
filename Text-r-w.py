@@ -52,16 +52,6 @@ def open_file():
 
 
 
-def open_pdf():
-
-    open_pdf = filedialog.askopenfilename(initialdir="D:/Studies", title="Open PDF File",filetypes=(("PDF File","*.pdf"),("All","*.*")))
-
-    if open_pdf:
-        pdf_file = PyPDF2.PdfFileReader(open_pdf)
-        page = pdf_file.getPage(0)
-        page_content = page.extract_text()
-        my_text.insert(1.0, page_content)
-
 
 def save_txt():
     text_file = filedialog.asksaveasfilename(initialdir="D:/Studies", title="Save Text File",filetypes=(("Text File","*.txt"),("All","*.*"),))
