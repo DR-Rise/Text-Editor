@@ -29,6 +29,8 @@ def files_name():
         my_text.insert(END, onlyfiles[index] +"\n")
 
 
+
+
 def open_file():
     text_file = filedialog.askopenfilename(initialdir="D:/Studies", title="Open Text File",filetypes=(("All","*.*"),("Text File","*.txt"),("PDF File","*.pdf")))
     extn = get_extn(text_file)
